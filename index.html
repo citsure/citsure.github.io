@@ -151,7 +151,7 @@
    Same shape as question-bank.json — swap inline array for
    fetch('question-bank.json') when you wire up the real bank.
    ============================================================ */
-const BANK = [
+let BANK = [
   {id:"hist-01",category:"history",tier:1,type:"single",question:"In which year did the Battle of Hastings take place?",options:["1066","966","1166","1266"],answer:0,explanation:"William of Normandy defeated King Harold at the Battle of Hastings in 1066, beginning Norman rule in England."},
   {id:"hist-02",category:"history",tier:2,type:"single",question:"Which document, agreed in 1215, limited the power of the monarch?",options:["The Bill of Rights","Magna Carta","The Domesday Book","The Act of Union"],answer:1,explanation:"Magna Carta, agreed by King John in 1215, established that the king was subject to the law rather than above it."},
   {id:"hist-03",category:"history",tier:2,type:"single",question:"During whose reign was the Spanish Armada defeated in 1588?",options:["Elizabeth I","Mary I","Victoria","Anne"],answer:0,explanation:"The Spanish Armada was defeated in 1588 during the reign of Elizabeth I."},
@@ -403,7 +403,19 @@ function finish(){
   window.scrollTo(0,0);
 }
 
-renderStart();
+async function loadBank(){
+  try{
+    const res = await fetch('question-bank.json', {cache:'no-store'});
+    if(res.ok){
+      const data = await res.json();
+      if(data && Array.isArray(data.questions) && data.questions.length){
+        BANK = data.questions;            // JSON is the source of truth
+      }
+    }
+  }catch(e){ /* fetch failed (e.g. opened from disk) — keep inline fallback */ }
+  renderStart();
+}
+loadBank();
 </script>
 </body>
 </html>
