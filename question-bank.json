@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "exam": "Life in the UK Test",
+    "handbookEdition": "3rd",
+    "notAffiliated": "Independent practice tool. Not affiliated with, endorsed by, or connected to the Home Office or UK Government.",
+    "passMark": { "questions": 24, "minutesAllowed": 45, "correctToPass": 18 },
+    "reviewCadence": "quarterly",
+    "lastFullAudit": "2026-06-19"
+  },
+
+  "_fieldGuide": {
+    "id": "Unique, stable ID, e.g. 'hist-0001'. Never reuse an ID once retired.",
+    "category": "One of: values | uk-overview | history | society | government",
+    "subtopic": "Free-text grouping for drills, e.g. 'The Tudors', 'Parliament'.",
+    "tier": "1-4 difficulty for the climb mechanic (1 = easiest, 4 = hardest).",
+    "type": "'single' = one correct answer. 'multi' = select-two style.",
+    "question": "Your OWN wording. Never copy a sentence from the handbook.",
+    "options": "Array of answer choices shown to the user.",
+    "answer": "For 'single': the index of the correct option. For 'multi': an array of indices.",
+    "explanation": "Short, original explanation shown after the user answers.",
+    "fact": "Internal note of the underlying fact (NOT shown to users) — helps you re-check it.",
+    "volatile": "true if the answer is a figure or name that can change over time. Re-check these every cycle.",
+    "lastReviewed": "ISO date this single item was last fact-checked."
+  },
+
+  "questions": [
+    {
+      "id": "hist-0001",
+      "category": "history",
+      "subtopic": "Norman Conquest",
+      "tier": 1,
+      "type": "single",
+      "question": "In which year did the Battle of Hastings take place?",
+      "options": ["1066", "966", "1166", "1266"],
+      "answer": 0,
+      "explanation": "William of Normandy defeated King Harold at the Battle of Hastings in 1066, beginning Norman rule in England.",
+      "fact": "Battle of Hastings = 1066.",
+      "volatile": false,
+      "lastReviewed": "2026-06-19"
+    },
+    {
+      "id": "soc-0001",
+      "category": "society",
+      "subtopic": "Patron saints",
+      "tier": 2,
+      "type": "single",
+      "question": "Who is the patron saint of Scotland?",
+      "options": ["St George", "St Andrew", "St David", "St Patrick"],
+      "answer": 1,
+      "explanation": "St Andrew is the patron saint of Scotland, and his cross appears on the Scottish flag. (George = England, David = Wales, Patrick = Northern Ireland.)",
+      "fact": "Patron saints: England-George, Scotland-Andrew, Wales-David, NI-Patrick.",
+      "volatile": false,
+      "lastReviewed": "2026-06-19"
+    },
+    {
+      "id": "gov-0001",
+      "category": "government",
+      "subtopic": "Devolved administrations",
+      "tier": 3,
+      "type": "single",
+      "question": "How many members does the Northern Ireland Assembly have?",
+      "options": ["90", "108", "129", "60"],
+      "answer": 0,
+      "explanation": "The Northern Ireland Assembly has 90 members (MLAs) - five for each of the 18 constituencies. It was reduced from 108 in 2017.",
+      "fact": "NI Assembly = 90 MLAs since 2017 (previously 108). Classic example competitors get wrong.",
+      "volatile": true,
+      "lastReviewed": "2026-06-19"
+    },
+    {
+      "id": "soc-0002",
+      "category": "society",
+      "subtopic": "British Overseas Territories",
+      "tier": 2,
+      "type": "multi",
+      "question": "Which TWO of the following are British Overseas Territories?",
+      "options": ["Gibraltar", "Republic of Ireland", "The Falkland Islands", "France"],
+      "answer": [0, 2],
+      "explanation": "Gibraltar and the Falkland Islands are British Overseas Territories. The Republic of Ireland is an independent country, and France is unconnected to the UK.",
+      "fact": "British Overseas Territories include Gibraltar and the Falkland Islands.",
+      "volatile": false,
+      "lastReviewed": "2026-06-19"
+    }
+  ]
+}
