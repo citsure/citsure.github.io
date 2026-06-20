@@ -62,6 +62,10 @@
   .guide-link{margin-top:18px;font-size:.95rem}
   .guide-link a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--line);padding-bottom:2px}
   .guide-link a:hover{border-color:var(--ink)}
+  .upsell-home{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:600;font-size:.95rem;color:var(--go);text-decoration:none;border-bottom:1.5px solid var(--go-soft);padding-bottom:2px}
+  .upsell-home:hover{border-color:var(--go)}
+  .upsell{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--go);color:#fff;font-weight:600;font-size:1rem;padding:14px 22px;border-radius:11px;text-decoration:none;margin:0 0 14px}
+  .upsell:hover{background:#15694a;color:#fff}
 
   /* ---------- TEST ---------- */
   .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;
@@ -221,6 +225,7 @@ function renderStart(){
       </div>
       <button class="btn" id="startBtn">Start mock test</button>
       <p class="guide-link"><a href="how-it-works.html">How the test works</a> &nbsp;·&nbsp; <a href="about.html">About CitSure</a></p>
+      <a class="upsell-home" href="waitlist.html">Unlock the full question bank →</a>
       <p class="note">Independent practice tool. Not affiliated with, endorsed by, or connected to the Home Office or UK Government. Questions are written from publicly available facts.</p>
     </div>`;
   document.getElementById('startBtn').onclick = startTest;
@@ -398,6 +403,7 @@ function finish(){
     <h3 class="section-h">Review every question</h3>
     ${review}
 
+    <a class="upsell" href="waitlist.html">Want hundreds more questions and topic drills? Get early access →</a>
     <div class="results-actions">
       <button class="btn" id="againBtn">Try another mock</button>
       <button class="btn ghost" id="homeBtn">Back to start</button>
